@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Tiket - Helpdesk Ticketing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>📋 Detail Tiket</h1>
+            <p>Sistem Ticketing Helpdesk</p>
+        </header>
+
+        <!-- Tombol Kembali ke Daftar Tiket -->
+        <a href="index.html" class="btn btn-secondary btn-back">← Kembali ke Daftar Tiket</a>
+
+        <!-- Card Detail Tiket -->
+        <div class="detail-card">
+            <!-- Info Utama Tiket -->
+            <div class="detail-header">
+                <h2 id="detailId">Tiket #001</h2>
+                <span id="detailStatus" class="badge badge-blue">Open</span>
+            </div>
+
+            <!-- Info Pelapor dan Keluhan -->
+            <div class="detail-section">
+                <div class="detail-row">
+                    <span class="detail-label">Nama Pelapor:</span>
+                    <span id="detailReporter" class="detail-value">-</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Judul Keluhan:</span>
+                    <span id="detailTitle" class="detail-value">-</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Prioritas:</span>
+                    <span id="detailPriority" class="badge">-</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Tanggal Dibuat:</span>
+                    <span id="detailDate" class="detail-value">-</span>
+                </div>
+            </div>
+
+            <!-- Kronologi Keluhan -->
+            <div class="detail-section">
+                <h3>📄 Kronologi Keluhan</h3>
+                <p id="detailDescription" class="description">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+
+            <!-- Lampiran Gambar -->
+            <div class="detail-section">
+                <h3>📎 Lampiran</h3>
+                <div class="attachment">
+                    <img src="https://via.placeholder.com/400x200/4A90D9/FFFFFF?text=Lampiran+Gambar+1" alt="Lampiran 1" onerror="this.src='https://placehold.co/400x200/4A90D9/FFFFFF?text=Lampiran+1'">
+                    <img src="https://via.placeholder.com/400x200/67B099/FFFFFF?text=Lampiran+Gambar+2" alt="Lampiran 2" onerror="this.src='https://placehold.co/400x200/67B099/FFFFFF?text=Lampiran+2'">
+                </div>
+            </div>
+
+            <!-- Kolom Komentar Teknisi -->
+            <div class="detail-section">
+                <h3>💬 Komentar Teknisi</h3>
+                <div id="commentsContainer" class="comments-container">
+                    <!-- Komentar akan ditambahkan di sini oleh JavaScript -->
+                </div>
+                
+                <!-- Form Tambah Komentar -->
+                <div class="comment-form">
+                    <textarea id="commentInput" placeholder="Tulis komentar teknisi di sini..." rows="4"></textarea>
+                    <button id="btnSendComment" class="btn btn-primary">📤 Kirim Komentar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Helpdesk Ticketing System</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

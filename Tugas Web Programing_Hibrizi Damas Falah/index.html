@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Keluhan Pelanggan - Helpdesk Ticketing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>📋 Monitoring Keluhan Pelanggan</h1>
+            <p>Sistem Ticketing Helpdesk</p>
+        </header>
+
+        <!-- Toolbar: Search, Filter, dan Tombol Tambah -->
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <!-- Search Bar untuk cari nama atau judul keluhan -->
+                <input type="text" id="searchInput" placeholder="🔍 Cari nama atau judul keluhan...">
+                
+                <!-- Dropdown Filter Status -->
+                <select id="filterStatus">
+                    <option value="">Semua Status</option>
+                    <option value="Open">Open</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Closed">Closed</option>
+                </select>
+                
+                <!-- Dropdown Filter Prioritas -->
+                <select id="filterPriority">
+                    <option value="">Semua Prioritas</option>
+                    <option value="Critical">Critical</option>
+                    <option value="High">High</option>
+                    <option value="Normal">Normal</option>
+                </select>
+            </div>
+            
+            <!-- Tombol untuk membuka modal tambah tiket -->
+            <button id="btnAddTicket" class="btn btn-primary">➕ Tambah Tiket</button>
+        </div>
+
+        <!-- Tabel Daftar Tiket -->
+        <div class="table-wrapper">
+            <table id="ticketTable">
+                <thead>
+                    <tr>
+                        <th>ID Tiket</th>
+                        <th>Nama Pelapor</th>
+                        <th>Judul Keluhan</th>
+                        <th>Prioritas</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="ticketBody">
+                    <!-- Data tiket akan dimuat oleh JavaScript -->
+                </tbody>
+            </table>
+            
+            <!-- Pesan jika tidak ada data -->
+            <p id="noDataMessage" class="no-data" style="display: none;">Tidak ada tiket yang ditemukan</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Helpdesk Ticketing System</p>
+        </footer>
+    </div>
+
+    <!-- Modal Form Tambah Tiket -->
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📝 Tambah Tiket Baru</h2>
+                <span class="close">&times;</span>
+            </div>
+            
+            <form id="ticketForm">
+                <!-- Field Nama Pelapor -->
+                <div class="form-group">
+                    <label for="reporterName">Nama Pelapor</label>
+                    <input type="text" id="reporterName" placeholder="Masukkan nama pelapor" required>
+                </div>
+                
+                <!-- Field Judul Keluhan -->
+                <div class="form-group">
+                    <label for="complaintTitle">Judul Keluhan</label>
+                    <input type="text" id="complaintTitle" placeholder="Masukkan judul keluhan" required>
+                </div>
+                
+                <!-- Field Prioritas -->
+                <div class="form-group">
+                    <label for="priority">Prioritas</label>
+                    <select id="priority" required>
+                        <option value="Normal">Normal</option>
+                        <option value="High">High</option>
+                        <option value="Critical">Critical</option>
+                    </select>
+                </div>
+                
+                <!-- Field Status (default: Open, tidak bisa diubah di form tambah) -->
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" disabled>
+                        <option value="Open" selected>Open</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Closed">Closed</option>
+                    </select>
+                </div>
+                
+                <!-- Tombol Aksi Form -->
+                <div class="form-actions">
+                    <button type="button" id="btnCancel" class="btn btn-secondary">Batal</button>
+                    <button type="submit" class="btn btn-primary">💾 Simpan Tiket</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link ke file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
